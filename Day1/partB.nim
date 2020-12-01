@@ -32,7 +32,9 @@ for i in 0 ..< inputs.len - 2:
   if found:
     break
 
-echo resultA
-echo resultB
-echo resultC
-echo multiply
+# Echo results
+echo "=== PART B ==="
+echo "-> Number 1 = " & $resultA
+echo "-> Number 2 = " & $resultB
+echo "-> Number 3 = " & $resultB
+echo "-> Multiply = " & $multiply

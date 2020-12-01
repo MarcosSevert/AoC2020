@@ -27,6 +27,8 @@ for i in 0 ..< inputs.len - 1:
   if found:
     break
 
-echo resultA
-echo resultB
-echo multiply
+# Echo results
+echo "=== PART A ==="
+echo "-> Number 1 = " & $resultA
+echo "-> Number 2 = " & $resultB
+echo "-> Multiply = " & $multiply
