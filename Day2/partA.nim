@@ -24,6 +24,7 @@ block lines:
     # Read string value
     var s: string = line.split({' ', '-',':'})[4]
 
+    # Check input conditions
     for i in 0 ..< s.len():
       if s[i] == c:
         count = count + 1
