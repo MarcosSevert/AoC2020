@@ -38,11 +38,32 @@ proc parse_line(line: string):Rule =
   # Set rule name (color of the bag)
   ret_rule.name = parts[0].strip()
 
+  # Declare new rule Inner sequence
+  var sub_rules = newSeq[Inner]()
+
+  # If there is no subrule no Inner sequence is needed
+  if not("no other bags" == parts[1].strip()):
+    # Add subrules to Inner sequence
+    for sub_rule in parts[1].strip().split(','):
+      var inner: Inner = new(Inner)
+
+      # Get count
+      var num: int
+      discard parseInt(sub_rule.strip().split(" ")[0],num)
+      inner.count = num
+
+      # Get name (color of the bag)
+      inner.name = sub_rule.strip()[1 .. ^5].strip()
+
+      # Add inner to Inner sequence
+      sub_rules.add(inner)
+
+  ret_rule.bags = sub_rules
   return ret_rule
 #______________________________________________________________________________
 
 
-
-for line in lines "test_input.txt":
+# Load all rules
+for line in lines "input.txt":
+  rules.add(parse_line(line))
   echo parse_line(line).name
-  break
