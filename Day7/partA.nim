@@ -14,7 +14,7 @@ type
 
 
 # Initial Color________________________________________________________________
-const ShinyGold: string = "shiny gold"
+const StartColor: string = "shiny gold"
 #______________________________________________________________________________
 
 
@@ -61,6 +61,15 @@ proc parse_line(line: string):Rule =
   ret_rule.bags = sub_rules
   return ret_rule
 #______________________________________________________________________________
+
+
+# Procedure to search for bags containing a color______________________________
+proc search_rules(color: string): seq[int]:
+  # Index sequence
+  var indexes = newSeq[int]()
+  return indexes
+#______________________________________________________________________________
+
 
 
 # Load all rules
