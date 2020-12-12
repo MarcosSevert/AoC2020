@@ -57,6 +57,7 @@ block outer:
           needed.c = 'L'
           changes.add(needed)
 
+
     # Apply changes
     if changes.len() == 0:
       break outer
